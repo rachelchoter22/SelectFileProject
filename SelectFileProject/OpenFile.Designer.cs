@@ -34,6 +34,7 @@
             this.filePathTextBox = new System.Windows.Forms.TextBox();
             this.OpenFoldetBtn = new System.Windows.Forms.Button();
             this.errorMassageLabel = new System.Windows.Forms.Label();
+            this.filesComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // ChooseFolderLabel
@@ -53,6 +54,7 @@
             this.chooseFileLabel.Size = new System.Drawing.Size(72, 15);
             this.chooseFileLabel.TabIndex = 1;
             this.chooseFileLabel.Text = "Choose file :";
+            this.chooseFileLabel.Visible = false;
             // 
             // filePathTextBox
             // 
@@ -82,11 +84,21 @@
             this.errorMassageLabel.Size = new System.Drawing.Size(0, 15);
             this.errorMassageLabel.TabIndex = 4;
             // 
+            // filesComboBox
+            // 
+            this.filesComboBox.FormattingEnabled = true;
+            this.filesComboBox.Location = new System.Drawing.Point(35, 172);
+            this.filesComboBox.Name = "filesComboBox";
+            this.filesComboBox.Size = new System.Drawing.Size(623, 23);
+            this.filesComboBox.TabIndex = 5;
+            this.filesComboBox.Visible = false;
+            // 
             // OpenFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.filesComboBox);
             this.Controls.Add(this.errorMassageLabel);
             this.Controls.Add(this.OpenFoldetBtn);
             this.Controls.Add(this.filePathTextBox);
@@ -106,5 +118,6 @@
         private TextBox filePathTextBox;
         private Button OpenFoldetBtn;
         private Label errorMassageLabel;
+        private ComboBox filesComboBox;
     }
 }

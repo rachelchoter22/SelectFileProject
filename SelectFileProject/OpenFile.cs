@@ -23,11 +23,23 @@ namespace SelectFileProject
             if (isFolderExist)
             {
                 errorMassageLabel.Text = "";
+                filesComboBox.Items.Clear();
+                string[] files = Directory.GetFiles(filePathTextBox.Text);
+                foreach (string f in files)
+                {
+                    var name = Path.GetFileName(f);
+                    filesComboBox.Items.Add(name);
+                }
+                chooseFileLabel.Visible = true;
+                filesComboBox.Visible = true;
             }
             else
             {
                 errorMassageLabel.Text = "Folder not exist";
+                chooseFileLabel.Visible = false;
+                filesComboBox.Visible = false;
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,7 +50,7 @@ namespace SelectFileProject
         }
         private bool ValidateFilePath()
         {
-           return Directory.Exists(filePathTextBox.Text);
+            return Directory.Exists(filePathTextBox.Text);
         }
     }
 }
