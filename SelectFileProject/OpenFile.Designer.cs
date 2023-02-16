@@ -35,6 +35,7 @@
             this.OpenFoldetBtn = new System.Windows.Forms.Button();
             this.errorMassageLabel = new System.Windows.Forms.Label();
             this.filesComboBox = new System.Windows.Forms.ComboBox();
+            this.fileErrorMassageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ChooseFolderLabel
@@ -92,12 +93,23 @@
             this.filesComboBox.Size = new System.Drawing.Size(623, 23);
             this.filesComboBox.TabIndex = 5;
             this.filesComboBox.Visible = false;
+            this.filesComboBox.SelectedIndexChanged += new System.EventHandler(this.filesComboBox_SelectedIndexChanged);
+            // 
+            // fileErrorMassageLabel
+            // 
+            this.fileErrorMassageLabel.AutoSize = true;
+            this.fileErrorMassageLabel.ForeColor = System.Drawing.Color.Firebrick;
+            this.fileErrorMassageLabel.Location = new System.Drawing.Point(35, 211);
+            this.fileErrorMassageLabel.Name = "fileErrorMassageLabel";
+            this.fileErrorMassageLabel.Size = new System.Drawing.Size(0, 15);
+            this.fileErrorMassageLabel.TabIndex = 6;
             // 
             // OpenFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fileErrorMassageLabel);
             this.Controls.Add(this.filesComboBox);
             this.Controls.Add(this.errorMassageLabel);
             this.Controls.Add(this.OpenFoldetBtn);
@@ -119,5 +131,6 @@
         private Button OpenFoldetBtn;
         private Label errorMassageLabel;
         private ComboBox filesComboBox;
+        private Label fileErrorMassageLabel;
     }
 }
