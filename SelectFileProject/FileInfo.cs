@@ -9,7 +9,6 @@ namespace SelectFileProject
     public class FileInfo
     {
         public string FileName { get; set; }
-        public string FileDirectory { get; set; }
         public string FileFullPath { get; set; }
     }
 }
