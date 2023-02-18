@@ -18,18 +18,15 @@ namespace SelectFileProject
         {
             try
             {
-
-
                 bool isFolderExist = Directory.Exists(filePathTextBox.Text);
                 if (isFolderExist)
                 {
                     errorMassageLabel.Text = "";
-                    filesComboBox.DataSource = null;
                     List<FileInfo> filesInfo = new List<FileInfo>();
+
                     GetFilesRecursive(ref filesInfo, filePathTextBox.Text.Trim());
 
                     filesComboBox.Items.Clear();
-
                     filesComboBox.DisplayMember = "FileName";
                     filesComboBox.ValueMember = "FileFullPath";
                     filesInfo.ForEach(fileInfo =>
